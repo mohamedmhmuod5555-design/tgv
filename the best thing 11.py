@@ -93,7 +93,6 @@ if st.session_state.hearts ==0:
     st.rerun()
  else:
     st.error("للاسف ليس لديك ما يكفي من العملات حتي تحا فظ علي نقاطك ")
-    st.session_state.c=0
     st.session_state.num=0
     st.session_state.hearts=3
     time.sleep(2)
