@@ -87,6 +87,8 @@ if st.session_state.hearts ==0:
   else:
    st.error("للاسف ليس لديك ما يكفي من العملات حتي تحا فظ علي نقاطك ")
    st.session_state.num=0
+ else:
+ st.session_state.num=0
 
 if st.session_state.num > 0 and st.session_state.num % 10 == 0:
   st.success("انت بطل! تحدي صديقك انه بالطبع لن يستطيع ان يصل لمستواك  ")
