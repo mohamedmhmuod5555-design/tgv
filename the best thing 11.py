@@ -59,7 +59,7 @@ if st.button("تأكيد التخمين "):
   if number == sc:
    st.session_state.num += 1
    st.session_state.coins +=1
-    st.session_state.c += 1
+   st.session_state.c += 1
    st.session_state.feed="correct"
   else:
    st.session_state.hearts-=1
@@ -85,10 +85,10 @@ if st.session_state.hearts ==0:
  st.error("للاسف انتهت المحاولات ان كنت تريد انقاذ يمكن الحفاظ عليها ببيع ثلاث عملات ذهبيه ") 
  if st.session_state.coins>=3:
   if st.button("انقاذ النقاط "): 
-    st.session_state.c
-    st.session_state.hearts=3
-    time.sleep(1)
-    st.rerun()
+     st.session_state.c
+     st.session_state.hearts=3
+     time.sleep(1)
+     st.rerun()
  else:
     st.error("للاسف ليس لديك ما يكفي من العملات حتي تحا فظ علي نقاطك ")
     st.session_state.num=0
