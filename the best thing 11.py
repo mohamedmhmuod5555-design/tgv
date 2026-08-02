@@ -33,6 +33,8 @@ if 'feed' not in st.session_state:
  st.session_state.feed=0
 if 'hearts' not in st.session_state:
  st.session_state.hearts=3
+if 'coins' not in st.session_state:
+ st.session_state.coins=0
 
 
 
@@ -54,12 +56,13 @@ if st.button("تأكيد التخمين "):
   st.session_state.count += 1
   if number == sc:
    st.session_state.num += 1
+   st.session_state.coins +=1
    st.session_state.feed="correct"
   else:
    st.session_state.hearts-=1
    st.session_state.feed="false" 
 if st.session_state.feed=="correct":
-  st.success("انك اسطوره يا عبقري الرياضه ")
+  st.success(" لقد زودت عملتك الذهبيه ب واحد انك اسطوره يا عبقري الرياضه ")
   st.balloons()
   st.session_state.feed=None
   st.session_state.num1=random.randint(1,int(st.session_state.ran))
@@ -76,9 +79,14 @@ if st.session_state.feed=="false":
   time.sleep(1)
   st.rerun()
 if st.session_state.hearts ==0:
- st.error("للاسف انتهت المحاولات ")
- st.session_state.num=0
- st.session_state.hearts=3
+ st.error("للاسف انتهت المحاولات ان كنت تريد انقاذ يمكن الحفاظ عليها ببيع ثلاث عملات ذهبيه ") 
+ if st.button("انقاذ النقاط "): 
+  if st.session_state.coins>=3:
+   st.session_state.coins -=3
+   st.session_state.hearts=3
+  else:
+   st.error("للاسف ليس لديك ما يكفي من العملات حتي تحا فظ علي نقاطك ")
+   st.session_state.num=0
 
 if st.session_state.num > 0 and st.session_state.num % 10 == 0:
   st.success("انت بطل! تحدي صديقك انه بالطبع لن يستطيع ان يصل لمستواك  ")
@@ -92,3 +100,5 @@ if st.session_state.num > 0 and st.session_state.num % 10 == 0:
 st.write("your points are " ,st.session_state.num,"from",st.session_state.count,"Questions" )
 st.write("you are in level",int(st.session_state.level))
 st.write("الارواح الحاليه ","❤️ "*st.session_state.hearts)
+st.write("عملاتك الذهبيه ",st.session_state.coins,"dollars")
+
