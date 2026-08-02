@@ -80,19 +80,18 @@ if st.session_state.feed=="false":
   st.rerun()
 if st.session_state.hearts ==0:
  st.error("للاسف انتهت المحاولات ان كنت تريد انقاذ يمكن الحفاظ عليها ببيع ثلاث عملات ذهبيه ") 
- if st.button("انقاذ النقاط "): 
-  if st.session_state.coins>=3:
-   st.session_state.coins -=3
-   st.session_state.hearts=3
-   time.sleep(1)
-   st.rerun()
-  else:
-    st.session_state.num=0
-    st.error("للاسف ليس لديك ما يكفي من العملات حتي تحا فظ علي نقاطك ")
-    st.session_state.num=0
+ if st.session_state.coins>=3:
+  if st.button("انقاذ النقاط "): 
+    st.session_state.coins -=3
     st.session_state.hearts=3
-
-
+    time.sleep(1)
+    st.rerun()
+  else:
+     st.error("للاسف ليس لديك ما يكفي من العملات حتي تحا فظ علي نقاطك ")
+     st.session_state.num=0
+     st.session_state.hearts=3
+     time.sleep(2)
+     st.rerun()
 if st.session_state.num > 0 and st.session_state.num % 10 == 0:
   st.success("انت بطل! تحدي صديقك انه بالطبع لن يستطيع ان يصل لمستواك  ")
   if st.button("الليفل التالي "):
