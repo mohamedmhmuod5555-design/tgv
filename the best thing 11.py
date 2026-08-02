@@ -89,8 +89,7 @@ if st.session_state.hearts ==0:
      st.session_state.coins -=3
      st.session_state.num= st.session_state.c
      st.session_state.hearts=3
-     time.sleep(3)
-     st.rerun()
+     
    else:
      st.session_state.num=0
      st.session_state.hearts=3
