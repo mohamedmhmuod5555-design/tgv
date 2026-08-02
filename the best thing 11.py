@@ -36,7 +36,7 @@ if 'hearts' not in st.session_state:
 if 'coins' not in st.session_state:
  st.session_state.coins=0
 if 'c' not in st.session_state:
- st.session_state.c=0
+ st.session_state.c
 
 
 
