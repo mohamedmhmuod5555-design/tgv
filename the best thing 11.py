@@ -60,7 +60,7 @@ if st.button("تأكيد التخمين "):
   if number == sc:
    st.session_state.num += 1
    st.session_state.coins +=1
-    st.session_state.c+=11
+   st.session_state.c+=1
    st.session_state.feed="correct"
   else:
    st.session_state.hearts-=1
