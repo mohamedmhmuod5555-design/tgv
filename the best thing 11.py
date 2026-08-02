@@ -85,7 +85,7 @@ if st.session_state.hearts ==0:
  st.error("للاسف انتهت المحاولات ان كنت تريد انقاذ يمكن الحفاظ عليها ببيع ثلاث عملات ذهبيه ") 
  if st.session_state.coins>=3:
   if st.button("انقاذ النقاط "): 
-    st.session_state.c
+   st.session_state.c
     st.session_state.hearts=3
     time.sleep(1)
     st.rerun()
