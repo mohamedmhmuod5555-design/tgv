@@ -91,7 +91,7 @@ if st.session_state.hearts ==0:
     st.session_state.hearts=3
     time.sleep(3)
     st.rerun()
-  else:
+else:
     st.session_state.num=0
     st.session_state.hearts=3
     time.sleep(3)
