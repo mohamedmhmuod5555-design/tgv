@@ -72,16 +72,14 @@ if st.session_state.feed=="correct":
   st.session_state.num1=random.randint(1,int(st.session_state.ran))
   st.session_state.num2=random.randint(1,int(st.session_state.ran))
   st.session_state.sign=random.choice(['+','-','*','/'])
-  time.sleep(1)
-  st.rerun()
+  
 if st.session_state.feed=="false":
   st.error(f"اجابتك خاطئة! الإجابة الصحيحة كانت : {sc}")
   st.session_state.feed=None
   st.session_state.num1=random.randint(1,int(st.session_state.ran))
   st.session_state.num2=random.randint(1,int(st.session_state.ran))
   st.session_state.sign=random.choice(['+','-','*','/'])
-  time.sleep(1)
-  st.rerun()
+
 if st.session_state.hearts ==0:
   st.error("للاسف انتهت المحاولات ان كنت تريد انقاذ يمكن الحفاظ عليها ببيع ثلاث عملات ذهبيه ") 
   if st.session_state.coins>=3:
