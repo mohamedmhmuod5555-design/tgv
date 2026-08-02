@@ -35,6 +35,9 @@ if 'hearts' not in st.session_state:
  st.session_state.hearts=3
 if 'coins' not in st.session_state:
  st.session_state.coins=0
+if 'c' not in st.session_state:
+ st.session_state.c=0
+
 
 
 
@@ -57,6 +60,7 @@ if st.button("تأكيد التخمين "):
   if number == sc:
    st.session_state.num += 1
    st.session_state.coins +=1
+    st.session_state.c+=11
    st.session_state.feed="correct"
   else:
    st.session_state.hearts-=1
@@ -83,12 +87,13 @@ if st.session_state.hearts ==0:
  if st.session_state.coins>=3:
   if st.button("انقاذ النقاط "): 
     st.session_state.coins -=3
-    st.session_state.num=st.session_state.count-3
+    st.session_state.num= st.session_state.c-3
     st.session_state.hearts=3
     time.sleep(1)
     st.rerun()
  else:
     st.error("للاسف ليس لديك ما يكفي من العملات حتي تحا فظ علي نقاطك ")
+     st.session_state.c=0
     st.session_state.num=0
     st.session_state.hearts=3
     time.sleep(2)
